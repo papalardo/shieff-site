@@ -1,0 +1,21 @@
+.btn-cart {
+    position: fixed;
+    background: #0d86ff;
+    width: 7rem;
+    height: 7rem;
+    bottom: 2rem;
+    border: 2px solid #77afe6;
+    border-radius: 10rem;
+    right: 2rem;
+    cursor: pointer;
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        svg {
+            fill: #FFF;
+            width: 3rem
+        }
+    }
+}

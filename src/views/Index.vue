@@ -1,21 +1,24 @@
 <template>
  <div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row mx-auto" v-for="products in chunkedProducts">
-        <div class="card m-4 col" v-for="product in products">
-          <img class="card-img-top" :src="product.image" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text"><span v-for="feedstock in product.feedstock">{{ feedstock.name + ', ' }}</span></p>
-            <a href="#" @click="selectProduct(product)" class="btn btn-primary">Selecionar</a>
-          </div>
+            <div class="card m-4 col" v-for="product in products">
+                <img class="card-img-top" :src="product.image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text"><span v-for="feedstock in product.feedstock">{{ feedstock.name + ', ' }}</span></p>
+                    <a href="#" @click="selectProduct(product)" class="btn btn-primary">Selecionar</a>
+                </div>
+            </div>
+        </div>
+        <div class="btn-cart" @click="showCart">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/></svg>
+            </span>
         </div>
     </div>
 
-<div class="float-right" @click="showCart">Cart</div>
-</div>
-
-<div class="modal fade" id="productDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="productDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -78,7 +81,7 @@
          <div class="container-fluid">
             <div class="row cart" v-for="(item, key) in cart">
                 <div class="col-12 col-sm-12 col-md-4 text-center">
-                    <img class="img-responsive" :src="product.image" alt="prewiew" width="120" height="80">
+                    <img class="img-responsive" :src="item.image" alt="prewiew" width="120" height="80">
                 </div>
                 <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-4">
                     <h4 class="product-name"><strong>{{ item.name }}</strong></h4>
@@ -118,7 +121,7 @@
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Fechar pedido</button>
       </div>
     </div>
   </div>

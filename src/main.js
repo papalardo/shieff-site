@@ -14,7 +14,7 @@ window.$ = window.jQuery = jquery;
 
 require('bootstrap/dist/js/bootstrap.bundle.js')
 // import 'bootstrap/dist/css/bootstrap.css'
-import 'font-awesome/css/font-awesome.css'
+// import './assets/fonts/font-awesome.css'
 
 Vue.use(VueAxios, axios)
 

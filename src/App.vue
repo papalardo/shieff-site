@@ -11,6 +11,8 @@ export default {
 }
 </script>
 <style lang="scss">
+  @import 'https://use.fontawesome.com/releases/v5.3.1/css/all.css';
+  @import '@/assets/css/app.scss';
   @import '@/assets/styles/custom-bootstrap.scss';
   @import '../node_modules/bootstrap/scss/bootstrap.scss';
 </style>
